@@ -1,71 +1,78 @@
+/* Styling for the entire webpage body */
 body {
-    background-size: cover;
-    background-image: url('reset.gif');
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-image 0.5s ease-in-out; 
-    backdrop-filter: blur(9px);
+    background-size: cover; /* Ensure the background image covers the entire viewport */
+    background-image: url('reset.gif'); /* Set the background image to 'reset.gif' */
+    text-align: center; /* Center-align text and elements within the body */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    height: 100vh; /* Set the body height to cover the full viewport height */
+    display: flex; /* Use flexbox for layout control */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    transition: background-image 0.5s ease-in-out; /* Add a smooth transition effect for background-image changes */
+    backdrop-filter: blur(9px); /* Apply a blur effect to the background */
 }
 
+/* Styling for the container of the stopwatch */
 .stopwatch-container {
-    background-color: transparent;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease-in-out;
+    background-color: transparent; /* Set the background color to transparent */
+    padding: 40px; /* Add padding around the container */
+    border-radius: 10px; /* Round the corners of the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow with a slight blur */
+    transition: box-shadow 0.3s ease-in-out; /* Add a smooth transition effect for box-shadow changes */
 }
 
+/* Add a glow effect to the stopwatch container on hover */
 .stopwatch-container:hover {
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Glow effect on hover */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Increase the intensity of the box shadow on hover */
 }
 
+/* Styling for the stopwatch elements */
 .stopwatch {
-    font-family: 'Martian Mono', monospace;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-family: 'Martian Mono', monospace; /* Apply a custom font for the stopwatch elements */
+    display: flex; /* Use flexbox for layout control */
+    flex-direction: column; /* Arrange elements in a vertical column */
+    align-items: center; /* Center elements horizontally */
 }
 
+/* Styling for the time display */
 .time-display {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 54px;
-    margin-bottom: 20px;
-    color: white;
-    text-shadow: 0 0 20px rgba(0, 0, 0, 1.0);
-
+    font-family: 'Press Start 2P', cursive; /* Apply a custom font for the time display */
+    font-size: 54px; /* Set the font size */
+    margin-bottom: 20px; /* Add margin at the bottom */
+    color: white; /* Set text color to white */
+    text-shadow: 0 0 20px rgba(0, 0, 0, 1.0); /* Add a text shadow for a bold effect */
 }
 
-
+/* Styling for the buttons within the stopwatch */
 .buttons button {
-    font-family: 'Martian Mono', monospace;
-    color: white;
-    border: 1px;
-    padding: 20px 40px;
-    margin: 5px;
-    cursor: pointer;
-    font-size: 20px;
-    text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-    border-radius: 5px;
-    transition: box-shadow 0.3s ease-in-out; /* Add transition for button glow */
-    background-color: rgba(0, 0, 0, 0.2);
+    font-family: 'Martian Mono', monospace; /* Apply a custom font for the buttons */
+    color: white; /* Set text color to white */
+    border: 1px; /* Set a 1px border (it's missing the border-style property, e.g., 'solid') */
+    padding: 20px 40px; /* Set padding for the buttons */
+    margin: 5px; /* Add margin around the buttons */
+    cursor: pointer; /* Change the cursor to a pointer on hover */
+    font-size: 20px; /* Set the font size */
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Add a text shadow for a bold effect */
+    border-radius: 5px; /* Round the corners of the buttons */
+    transition: box-shadow 0.3s ease-in-out; /* Add a smooth transition for box-shadow changes */
+    background-color: rgba(0, 0, 0, 0.2); /* Set a semi-transparent background color */
 }
 
+/* Styling for the 'RESET' button on hover */
 #reset:hover {
-    background-color: #007BFF;
-    box-shadow: 0 0 20px rgba(0, 123, 255, 0.8); /* Blue glow for Start button */
+    background-color: #007BFF; /* Change the background color to blue on hover */
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.8); /* Add a blue glow effect */
 }
 
+/* Styling for the 'STOP' button on hover */
 #stop:hover {
-    background-color: #FF4444;
-    box-shadow: 0 0 20px rgba(255, 68, 68, 0.8); /* Red glow for Stop button */
+    background-color: #FF4444; /* Change the background color to red on hover */
+    box-shadow: 0 0 20px rgba(255, 68, 68, 0.8); /* Add a red glow effect */
 }
 
+/* Styling for the 'START' button on hover */
 #start:hover {
-    background-color: #00C851;
-    box-shadow: 0 0 20px rgba(0, 200, 81, 0.8); /* Green glow for Reset button */
+    background-color: #00C851; /* Change the background color to green on hover */
+    box-shadow: 0 0 20px rgba(0, 200, 81, 0.8); /* Add a green glow effect */
 }

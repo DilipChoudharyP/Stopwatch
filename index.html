@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Link to Google Fonts for custom typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Import fonts "Martian Mono" and "Press Start 2P" from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@800&family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <!-- Additional font links (optional) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com"crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@800&display=swap" rel="stylesheet">
+    
+    <!-- Set character encoding to UTF-8 -->
     <meta charset="UTF-8">
+    
+    <!-- Define the viewport for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Link to an external CSS file for styling -->
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Set the title of the web page -->
     <title>Stopwatch</title>
 </head>
 <body>
+    <!-- Create a container for the stopwatch -->
     <div class="stopwatch-container">
+        <!-- Create a stopwatch display and buttons container -->
         <div class="stopwatch">
+            <!-- Display the time with an initial value of "00:00:000" -->
             <div class="time-display">00:00:000</div>
+            
+            <!-- Create buttons for start, stop, and reset actions -->
             <div class="buttons">
                 <button id="start">START</button>
                 <button id="stop">STOP</button>
@@ -23,6 +41,8 @@
             </div>
         </div>
     </div>
+    
+    <!-- Include an external JavaScript file for functionality -->
     <script src="script.js"></script>
 </body>
 </html>
