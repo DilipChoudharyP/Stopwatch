@@ -1,33 +1,71 @@
 body {
+    background-size: cover;
+    background-image: url('reset.gif');
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f5f5f5;
+    transition: background-image 0.5s ease-in-out; 
+    backdrop-filter: blur(9px);
+}
+
+.stopwatch-container {
+    background-color: transparent;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.stopwatch-container:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Glow effect on hover */
 }
 
 .stopwatch {
-    text-align: center;
+    font-family: 'Martian Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.time {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 10px;
+.time-display {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 54px;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 1.0);
+
 }
 
-button {
-    font-size: 18px;
-    padding: 10px 20px;
+
+.buttons button {
+    font-family: 'Martian Mono', monospace;
+    color: white;
+    border: 1px;
+    padding: 20px 40px;
     margin: 5px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
     cursor: pointer;
+    font-size: 20px;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
     border-radius: 5px;
+    transition: box-shadow 0.3s ease-in-out; /* Add transition for button glow */
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
-button:hover {
-    background-color: #0056b3;
+#reset:hover {
+    background-color: #007BFF;
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.8); /* Blue glow for Start button */
+}
+
+#stop:hover {
+    background-color: #FF4444;
+    box-shadow: 0 0 20px rgba(255, 68, 68, 0.8); /* Red glow for Stop button */
+}
+
+#start:hover {
+    background-color: #00C851;
+    box-shadow: 0 0 20px rgba(0, 200, 81, 0.8); /* Green glow for Reset button */
 }

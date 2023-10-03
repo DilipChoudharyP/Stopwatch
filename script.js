@@ -1,48 +1,55 @@
-let timer;
-let isRunning = false;
-let seconds = 0;
-let minutes = 0;
-let hours = 0;
+let timerInterval;
+let startTime;
+let running = false;
+let elapsedTime = 0;
 
-function startStop() {
-    if (isRunning) {
-        clearInterval(timer);
-        document.getElementById("startStop").textContent = "Start";
-    } else {
-        timer = setInterval(updateTime, 1000);
-        document.getElementById("startStop").textContent = "Stop";
+const timeDisplay = document.querySelector('.time-display');
+const startButton = document.getElementById('start');
+const stopButton = document.getElementById('stop');
+const resetButton = document.getElementById('reset');
+
+startButton.addEventListener('click', start);
+stopButton.addEventListener('click', stop);
+resetButton.addEventListener('click', reset);
+
+function start() {
+    if (!running) {
+        startTime = Date.now() - elapsedTime;
+        timerInterval = setInterval(updateTime, 10);
+        running = true;
+        document.body.style.backgroundImage = "url('start.gif')";
     }
-    isRunning = !isRunning;
+}
+
+function stop() {
+    if (running) {
+        clearInterval(timerInterval);
+        running = false;
+        document.body.style.backgroundImage = "url('stop.gif')";
+    }
 }
 
 function reset() {
-    clearInterval(timer);
-    isRunning = false;
-    seconds = 0;
-    minutes = 0;
-    hours = 0;
-    updateDisplay();
-    document.getElementById("startStop").textContent = "Start";
+    clearInterval(timerInterval);
+    elapsedTime = 0;
+    running = false;
+    timeDisplay.textContent = '00:00:000';
+    document.body.style.backgroundImage = "url('reset.gif')";
 }
 
 function updateTime() {
-    seconds++;
-    if (seconds === 60) {
-        seconds = 0;
-        minutes++;
-        if (minutes === 60) {
-            minutes = 0;
-            hours++;
-        }
-    }
-    updateDisplay();
+    const currentTime = Date.now();
+    elapsedTime = currentTime - startTime;
+    const minutes = Math.floor(elapsedTime / 60000);
+    const seconds = Math.floor((elapsedTime % 60000) / 1000);
+    const milliseconds = elapsedTime % 1000;
+    timeDisplay.textContent = `${padTime(minutes)}:${padTime(seconds)}:${padMilliseconds(milliseconds)}`;
 }
 
-function updateDisplay() {
-    const display = document.getElementById("display");
-    display.textContent = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+function padTime(value) {
+    return value.toString().padStart(2, '0');
 }
 
-function pad(num) {
-    return num.toString().padStart(2, "0");
+function padMilliseconds(value) {
+    return value.toString().padStart(3, '0');
 }
