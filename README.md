@@ -1,5 +1,7 @@
 # Welcome to my Stopwatch Repo
 
+Link to the APP : https://dilipchoudharyp.github.io/Stopwatch/
+
 This is a custom stopwatch which 
 - speeds up background animation when start is pressed
 - slows down background animation when stop is pressed
